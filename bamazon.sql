@@ -22,11 +22,11 @@ PRIMARY KEY (department_id)
 );
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("TV", "Electronics", 999.99, 20),("Headphone", "Electronics", 89.50, 45),
-("Cell Phone", "Electronics", 780.59, 82),("Utensil", "Kitchen", 12.00, 750),
-("Dinnerware Set", "Kitchen", 42.85, 61),("Sofa", "Furniture", 2054.90, 13),
-("Desk", "Furniture", 501.45, 4),("Bed", "Furniture", 3509.30, 56),
-("Napkins", "Household", 6.75, 317),("Light Bulb", "Household", 0.98, 98);
+VALUES ("Computer", "Electronics", 1199.00, 20),("Keyboard", "Electronics", 49.99, 45),
+("Speakers", "Electronics", 299.99, 82),("Blender", "Kitchen", 40.00, 750),
+("Utensil Set", "Kitchen", 29.99, 61),("Love Seat", "Furniture", 399.99, 13),
+("Lamp", "Furniture", 19.99, 4),("Table", "Furniture", 1000.00, 56),
+("Toilet Paper", "Household", 5.99, 317),("Paper Towels", "Household", 1.99, 98);
 
 INSERT INTO departments (department_name)
 VALUES ("Electronics"),("Kitchen"), ("Furniture"), ("Household");

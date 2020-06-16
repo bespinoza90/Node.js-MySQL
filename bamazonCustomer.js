@@ -21,7 +21,7 @@ connection.connect(function (err) {
 
 function shopping() {
 
-    connection.query("select * from products where stock_quantity > 0", function (err, res) { // select the products that have inventory
+    connection.query("select * from products where stock_quantity > 0", function (err, res) { 
         if (err) throw err;
 
         console.log("\nProducts for sale:\n");
@@ -46,14 +46,14 @@ function shopping() {
             }
         ]).then(function (answer) {
 
-            // if user wants to quit
+            
             if (answer.id === "q" || answer.id === "Q") {
                 console.log("\nThank you!\n");
                 connection.end();
                 return;
             }
 
-            // if user didn't answer quit, then ask second question
+            
             inquirer.prompt([
                 {
                     name: "quantity",
@@ -62,7 +62,7 @@ function shopping() {
                 }
             ]).then(function (answers) {
 
-                // loop through products array "res" to find the product id that user entered
+
                 for (var i = 0; i < res.length; i++) {
                     if (res[i].item_id === parseInt(answer.id)) {
 
@@ -80,12 +80,12 @@ function shopping() {
                             updateProduct(res[i].item_id, remainingQuantity, newProductSale, totalCost);
                         }
 
-                        // product is found, stop the loop
+                        
                         break;
                     }
                 }
 
-                // if i equals array length, that means it has looped through the whole array but didn't find the prodcut id that user entered, then display a message and re-shopping
+                
                 if (i === res.length) {
                     console.log("\nThis product doesn't exist.\n");
                     shopping();
